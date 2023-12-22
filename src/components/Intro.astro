@@ -1,0 +1,12 @@
+---
+import { Image } from 'astro:assets';
+import rohanHeadshotImage from '@/images/rohan-headshot.png';
+---
+
+<div id="about" class="py-11 md:py-14 flex flex-col md:flex-row">
+  <div class="flex-1 md:max-w-1/2 px-3 self-center">
+    <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-2 order-last md:order-first">Hey, I'm Rohan 👋</h1>
+    <div class="text-xl md:text-2xl">I'm passionate about making the web more accessible and I enjoy pushing myself outside my comfort zone.</div>
+  </div>
+  <Image class="flex flex-1 md:max-w-1/2 px-3 pb-10 md:pb-0 md:justify-end order-first md:order-last" src={rohanHeadshotImage} alt="A potrait image of Rohan Poojary." aria-hidden />
+</div>

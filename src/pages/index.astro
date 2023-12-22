@@ -1,6 +1,8 @@
 ---
 import '@/styles/globals.css';
 import Layout from '@/layouts/Layout.astro';
+import About from '@/components/About';
+import Intro from '@/components/Intro.astro';
 import { ModeToggle } from '@/components/ModeToggle';
 ---
 
@@ -24,7 +26,9 @@ import { ModeToggle } from '@/components/ModeToggle';
 </script>
 
 <Layout title="Rohan Poojary's Porfolio">
-	<main class="bg-slate-50 text-slate-900 dark:bg-slate-900 dark:text-slate-50">
+	<main class="px-3 mx-auto max-w-screen-lg">
 		<ModeToggle client:load />
+		<Intro />
+		<About />
 	</main>
 </Layout>
