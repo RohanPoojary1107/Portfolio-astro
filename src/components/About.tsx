@@ -14,7 +14,7 @@ const About = () => {
             anything from technology to basketball, feel free to connect with me on LinkedIn.
         </p>
         <Button asChild>
-            <a href="/resume">Check out my resume!</a>
+            <a href="/resume.pdf">Check out my resume!</a>
         </Button>
     </div>
   );
