@@ -1,4 +1,4 @@
-/** @type {import('tailwindcss').Config} */
+/** @type {import("tailwindcss").Config} */
 export default {
   darkMode: ["class"],
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,ts,tsx}"],
@@ -26,7 +26,11 @@ export default {
         "accordion-up": "accordion-up 0.2s ease-out",
       },
       maxWidth: {
-        "1/2": '50%',
+        "1/2": "50%",
+      },
+      gridTemplateColumns: {
+        "proj-3": "repeat(3, minmax(300px, 1fr))",
+        "proj-auto": "repeat(auto-fill, minmax(250px, 1fr))",
       }
     },
   },

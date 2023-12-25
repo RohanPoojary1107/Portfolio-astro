@@ -5,6 +5,8 @@ import About from '@/components/About';
 import Intro from '@/components/Intro.astro';
 import Footer from '@/components/Footer';
 import Experience from '@/components/Experience.astro';
+import Projects from '@/components/Projects';
+import ScrollToTop from '@/components/ScrollToTop';
 import { ModeToggle } from '@/components/ModeToggle';
 ---
 
@@ -33,6 +35,8 @@ import { ModeToggle } from '@/components/ModeToggle';
 		<Intro />
 		<About />
 		<Experience />
+		<Projects />
 		<Footer />
+		<ScrollToTop client:load />
 	</main>
 </Layout>
