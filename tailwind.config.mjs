@@ -31,6 +31,9 @@ export default {
       gridTemplateColumns: {
         "proj-3": "repeat(3, minmax(300px, 1fr))",
         "proj-auto": "repeat(auto-fill, minmax(250px, 1fr))",
+      },
+      screens: {
+        "xsm": "320px",
       }
     },
   },

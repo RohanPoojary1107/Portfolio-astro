@@ -1,6 +1,7 @@
 ---
 import '@/styles/globals.css';
 import Layout from '@/layouts/Layout.astro';
+import MainNav from '@/components/MainNav';
 import About from '@/components/About';
 import Intro from '@/components/Intro.astro';
 import Footer from '@/components/Footer';
@@ -31,7 +32,7 @@ import { ModeToggle } from '@/components/ModeToggle';
 
 <Layout title="Rohan Poojary's Porfolio">
 	<main class="px-3 mx-auto max-w-screen-lg xl:max-w-[1140px]">
-		<ModeToggle client:load />
+		<MainNav client:load/>
 		<Intro />
 		<About />
 		<Experience />

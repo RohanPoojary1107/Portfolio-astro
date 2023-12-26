@@ -69,7 +69,7 @@ const PROJECT_LIST: Project[] = [
 
 const Projects = () => {
     return (
-        <div id="projects">
+        <div id="projects" className="scroll-mt-16">
             <SectionHeader sectionName="projects" />
             <div className="grid grid-cols-proj-auto lg:grid-cols-proj-3 gap-8 auto-rows-fr">
                 {PROJECT_LIST.map((project) => (

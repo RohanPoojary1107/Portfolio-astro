@@ -25,7 +25,7 @@ export default function ScrollToTop() {
     }, []);
 
     return (
-        <span className="fixed bottom-6 right-6 z-50">
+        <span className="fixed bottom-12 right-6 z-50">
             {showButton && (
                 <Button
                     className="rounded-full"
