@@ -67,7 +67,7 @@ const EXP_LIST: Experience[] = [
 ];
 ---
 
-<div id="experience" class="scroll-mt-16">
+<section id="experience" class="scroll-mt-16">
   <SectionHeader sectionName="experience" />
   {
     EXP_LIST.map(({ company, link, title, duration, imgSrc, desc }) => (
@@ -77,7 +77,8 @@ const EXP_LIST: Experience[] = [
             <a href={link}>{company}</a>
           </div>
           <div class="pb-4">
-            {" "}{title} | {duration}{" "}
+            {" "}
+            {title} | {duration}{" "}
           </div>
           <ul class="pl-8 list-disc max-w-prose">
             {desc.map((bullet) => (
@@ -86,9 +87,9 @@ const EXP_LIST: Experience[] = [
           </ul>
         </div>
         <div class="order-first md:order-last justify-center md:justify-end max-w-lg pb-11 md:pb-0 md:pl-3 md:flex-1">
-            <Image class="rounded-2xl" alt={company} src={imgSrc} aria-hidden />
+          <Image class="rounded-2xl" alt={company} src={imgSrc} aria-hidden />
         </div>
       </div>
     ))
   }
-</div>
+</section>

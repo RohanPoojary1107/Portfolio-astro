@@ -3,7 +3,10 @@ import { Image } from "astro:assets";
 import rohanHeadshotImage from "@/images/rohan-headshot.png";
 ---
 
-<div id="about" class="py-11 md:py-14 flex flex-col md:flex-row scroll-mt-16">
+<section
+  id="about"
+  class="py-11 md:py-14 flex flex-col md:flex-row scroll-mt-16"
+>
   <div class="flex-1 md:max-w-1/2 px-3 self-center">
     <h1
       class="text-4xl sm:text-5xl md:text-6xl font-bold mb-2 order-last md:order-first"
@@ -11,8 +14,8 @@ import rohanHeadshotImage from "@/images/rohan-headshot.png";
       Hey, I'm Rohan 👋
     </h1>
     <div class="text-xl md:text-2xl">
-        I'm passionate about making the web more accessible and I enjoy pushing
-        myself outside my comfort zone.
+      I'm passionate about making the web more accessible and I enjoy pushing
+      myself outside my comfort zone.
     </div>
   </div>
   <Image
@@ -22,4 +25,4 @@ import rohanHeadshotImage from "@/images/rohan-headshot.png";
     loading="eager"
     aria-hidden
   />
-</div>
+</section>

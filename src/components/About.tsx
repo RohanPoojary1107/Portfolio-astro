@@ -5,7 +5,7 @@ import SectionHeader from "@/components/SectionHeader";
 
 const About = () => {
   return (
-    <div id="about" className="mb-16">
+    <section id="about" className="mb-16">
       <SectionHeader sectionName="about me" />
       <p className="mb-4">
         I'm a final year student at the <b>University of Toronto</b>, majoring
@@ -24,7 +24,7 @@ const About = () => {
           resume!
         </a>
       </Button>
-    </div>
+    </section>
   );
 };
 

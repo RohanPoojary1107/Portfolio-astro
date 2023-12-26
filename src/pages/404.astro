@@ -2,12 +2,6 @@
 import '@/styles/globals.css';
 import Layout from '@/layouts/Layout.astro';
 import MainNav from '@/components/MainNav';
-import About from '@/components/About';
-import Intro from '@/components/Intro.astro';
-import Footer from '@/components/Footer';
-import Experience from '@/components/Experience.astro';
-import Projects from '@/components/Projects';
-import ScrollToTop from '@/components/ScrollToTop';
 ---
 
 <script is:inline>
@@ -29,17 +23,12 @@ import ScrollToTop from '@/components/ScrollToTop';
 	}
 </script>
 
-<Layout 
-	title="Rohan Poojary's Porfolio"
-	description="Hey, I'm Rohan! I'm passionate about making the web more accessible and I enjoy pushing myself outside my comfort zone."
->
+<Layout title="Rohan Poojary - 404" description="Oops! Page not Found :(">
 	<main class="px-3 mx-auto max-w-screen-lg xl:max-w-[1140px]">
 		<MainNav client:load/>
-		<Intro />
-		<About />
-		<Experience />
-		<Projects />
-		<Footer />
-		<ScrollToTop client:load />
+        <div class="pt-12 pb-12">
+            <h1 class="font-bold">404: Page Not Found!</h1>
+            <p>Sorry, but the page you were looking for could not be found.</p>
+        </div>
 	</main>
 </Layout>
