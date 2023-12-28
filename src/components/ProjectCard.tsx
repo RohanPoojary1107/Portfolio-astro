@@ -25,7 +25,7 @@ export const ProjectCard = ({
     isPrivate,
 }: Project) => {
     return (
-        <Card className="relative">
+        <Card className="flex flex-col">
             <CardHeader>
                 <CardTitle className="flex items-center">
                     <FolderDot className="mr-2 self-start" aria-hidden />
@@ -43,19 +43,18 @@ export const ProjectCard = ({
                     ))}
                 </div>
             </CardContent>
-            <CardFooter className="absolute right-0 bottom-0">
+            <CardFooter className="justify-end mt-auto">
                 {isPrivate ? (
-                    <Lock className="h-[1.2rem] w-[1.2rem]" aria-hidden />
+                    <Lock className="h-[1.2rem] w-[1.2rem]" aria-label="This project is private." />
                 ) : (
                     <a
                         href={link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        aria-label="view github repository"
                     >
                         <Github
                             className="h-[1.2rem] w-[1.2rem] hover:animate-pulse"
-                            aria-hidden
+                            aria-label="view github repository"
                         />
                     </a>
                 )}
