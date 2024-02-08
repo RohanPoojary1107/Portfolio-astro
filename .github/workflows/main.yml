@@ -1,0 +1,14 @@
+name: Test
+
+on:
+  push:
+
+jobs:
+  canary:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: test
+        run: |
+          echo "CANARY_TAG=canary-$(date +%s)" >> $GITHUB_ENV
+          echo "Tag is: ${{ env.CANARY_TAG }}"
+  
