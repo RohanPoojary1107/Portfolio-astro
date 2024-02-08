@@ -7,8 +7,8 @@ jobs:
   canary:
     runs-on: ubuntu-20.04
     steps:
-      - name: test
+      - name: Configure canary tag
+        run: echo "CANARY_TAG=canary-$(date +%s)" >> $GITHUB_ENV
+      - name: Output
         run: |
-          echo "CANARY_TAG=canary-$(date +%s)" >> $GITHUB_ENV
           echo "Tag is: ${{ env.CANARY_TAG }}"
-  
