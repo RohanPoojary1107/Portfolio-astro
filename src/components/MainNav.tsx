@@ -12,7 +12,7 @@ import MobileNav from "./MobileNav";
 
 const MainNav = () => {
     return (
-        <header className="flex justify-between h-14 sticky top-0 z-50 backdrop-blur">
+        <header className="flex justify-between h-14 sticky top-0 z-50 backdrop-blur-sm">
             <NavigationMenu>
                 <NavigationMenuLink href="/" className="text-2xl xsm:text-3xl font-bold mr-5">
                     {"<Яohan/>"}
