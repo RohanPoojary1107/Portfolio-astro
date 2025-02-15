@@ -31,16 +31,6 @@ const Footer = () => {
                         <Mail className="h-[1.2rem] w-[1.2rem]" />
                     </a>
                 </Button>
-                <Button variant="ghost" size="icon" asChild>
-                    <a
-                        href="https://twitter.com/Rohan_1107"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="twitter"
-                    >
-                        <svg className="h-[1.2rem] w-[1.2rem] fill-current" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>X</title><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z" /></svg>
-                    </a>
-                </Button>
             </div>
             <div className="flex pt-2 sm:pt-0 items-center">
                 <div className="sr-only">
