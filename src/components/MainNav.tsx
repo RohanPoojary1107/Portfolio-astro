@@ -27,9 +27,6 @@ const MainNav = () => {
                         </NavigationMenuLink>
                     </NavigationMenuItem>
                     <NavigationMenuItem className="hover:underline">
-                        <NavigationMenuLink href="#projects">Projects</NavigationMenuLink>
-                    </NavigationMenuItem>
-                    <NavigationMenuItem className="hover:underline">
                         <NavigationMenuLink
                             href="/resume.pdf"
                             target="_blank"
