@@ -19,8 +19,34 @@ const EXP_LIST: Experience[] = [
   {
     company: "Wattpad",
     link: "https://www.wattpad.com",
-    title: "Associate Engineer",
-    duration: "May 2021 - Present",
+    title: "Intermediate Backend Engineer",
+    duration: "Jan 2024 - Present",
+    imgSrc: wattpadImg, 
+    desc: [
+      "Building scalable backend systems and APIs with Go, AWS, Kubernetes, and OpenAPI for millions of users, collaborating closely with client, product, and design teams.",
+      "Serving as a core member of the on-call engineering team, entrusted with maintaining high system reliability and rapid incident response for millions of users.",
+      "Led the development of <a class=\"underline\" href=\"https://www.wattpad.com/1575481129\" target=\"_blank\" rel=\"noopener noreferrer\">Polls</a>, a new interactive feature that increased user engagement by 15%.",
+      "<a class=\"underline\" href=\"https://www.wattpad.com/1534054762\" target=\"_blank\" rel=\"noopener noreferrer\">Redesigned Reading Lists</a> to improve discoverability and user experience, resulting in a 180% increase in users adding stories to reading lists.",
+      "Onboarding and mentoring new team members, fostering a collaborative and inclusive environment.",
+    ],
+  },
+{
+    company: "Wattpad",
+    link: "https://www.wattpad.com",
+    title: "Associate Backend Engineer",
+    duration: "Sept 2022 - Jan 2024",
+    imgSrc: wattpadImg, 
+    desc: [
+      "Designed and implemented an authorization platform using OPA, Go, and PHP to manage permissions across Wattpad's microservices, significantly enhancing security and scalability.",
+      "Led the engineering efforts for launching <a class=\"underline\" href=\"https://company.wattpad.com/blog/wattpad-originals\" target=\"_blank\" rel=\"noopener noreferrer\">Wattpad Originals</a>, collaborating with cross-functional teams to deliver a seamless and engaging user experience.",
+      "Identified and patched five production security vulnerabilities, improving overall system reliability and safeguarding user data.",
+    ],
+  },
+  {
+    company: "Wattpad",
+    link: "https://www.wattpad.com",
+    title: "Associate Web Engineer",
+    duration: "May 2021 - Sept 2022",
     imgSrc: wattpadImg,
     desc: [
       "Migrated the web application's Search experience from Backbone.js to React, leading to an 11% increase in user engagement within the first two weeks of launch.",
@@ -82,7 +108,7 @@ const EXP_LIST: Experience[] = [
           </div>
           <ul class="pl-8 list-disc max-w-prose">
             {desc.map((bullet) => (
-              <li>{bullet}</li>
+              <li set:html={bullet}></li>
             ))}
           </ul>
         </div>
