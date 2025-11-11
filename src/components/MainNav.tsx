@@ -1,5 +1,3 @@
-import { Github } from "lucide-react";
-
 import {
     NavigationMenu,
     NavigationMenuItem,
