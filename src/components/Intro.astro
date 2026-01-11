@@ -1,29 +1,27 @@
 ---
-import { Image } from "astro:assets";
-import rohanHeadshotImage from "@/images/rohan-headshot.png";
 ---
 
 <section
   id="about"
-  class="py-11 md:py-14 flex flex-col md:flex-row scroll-mt-16"
+  class="pt-32 md:pt-48 lg:pt-64 pb-11 md:pb-14 flex flex-col scroll-mt-16"
 >
-  <div class="flex-1 md:max-w-1/2 px-3 self-center">
+  <div class="text-left">
     <h1
-      class="text-4xl sm:text-5xl md:text-6xl font-bold mb-2 order-last md:order-first"
+      class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight mb-4"
     >
-      Hey, I'm Rohan <span class="inline-block origin-[70%_70%] animate-wave"
+      <span class="block">Hey, I'm Rohan <span class="inline-block origin-[70%_70%] animate-wave"
         >👋🏽</span
-      >
+      ></span>
     </h1>
-    <div class="text-xl md:text-2xl">
-      I'm on a mission to make backend systems simple, stable, and scalable.
-    </div>
+    <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold leading-tight tracking-tight">
+      <span class="block">
+        <span class="text-zinc-500 dark:text-zinc-400">I'm a </span>
+        <span>backend engineer</span>
+      </span>
+      <span class="block">
+        <span class="text-zinc-500 dark:text-zinc-400">based in </span>
+        <span>Toronto</span>
+      </span>
+    </h2>
   </div>
-  <Image
-    class="flex flex-1 md:max-w-1/2 px-3 pb-10 md:pb-0 md:justify-end order-first md:order-last"
-    src={rohanHeadshotImage}
-    alt="A potrait image of Rohan Poojary."
-    loading="eager"
-    aria-hidden
-  />
 </section>
