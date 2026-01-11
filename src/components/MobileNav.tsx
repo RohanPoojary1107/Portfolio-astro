@@ -19,7 +19,6 @@ const MobileNav = () => {
             <div className="flex flex-col space-y-3 mt-4">
                 <MobileLink href="#about" onOpenChange={setOpen}>About</MobileLink>
                 <MobileLink href="#experience" onOpenChange={setOpen}>Experience</MobileLink>
-                <MobileLink href="#projects" onOpenChange={setOpen}>Projects</MobileLink>
                 <MobileLink 
                     href="/resume.pdf"
                     target="_blank"
