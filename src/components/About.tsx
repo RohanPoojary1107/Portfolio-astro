@@ -5,7 +5,7 @@ import SectionHeader from "@/components/SectionHeader";
 
 const About = () => {
   return (
-    <section id="about" className="mb-16">
+    <section id="about" className="mb-16 scroll-mt-16">
       <SectionHeader sectionName="about me" />
       <div className="mb-4 space-y-4">
         <p>
