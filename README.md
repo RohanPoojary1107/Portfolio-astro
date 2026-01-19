@@ -1,24 +1,75 @@
-# Astro Starter Kit: Basics
+# Rohan Poojary Portfolio
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/273308df-3cb1-44c6-ad04-590966e1e05a/deploy-status)](https://app.netlify.com/sites/rohan-poojary-astro/deploys)
+My personal portfolio website built with Astro, React, and Tailwind CSS.
 
-## 🚀 Project Structure
+## 🏃 Getting Started
 
-Inside of your Astro project, you'll see the following folders and files:
+### Prerequisites
 
-## 🧞 Commands
+- [Bun](https://bun.sh) installed on your machine
 
-All commands are run from the root of the project, from a terminal:
+### Installation
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+1. Clone the repository
 
-## 👀 Want to learn more?
+2. Install dependencies:
+```bash
+bun install
+```
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+3. Start the development server:
+```bash
+bun run dev
+```
+
+The site will be available at `http://localhost:4321`
+
+## 📝 Available Scripts
+
+- `bun run dev` - Start development server
+- `bun run start` - Alias for dev
+- `bun run build` - Build for production (includes type checking)
+- `bun run preview` - Preview production build locally
+- `bun run astro` - Run Astro CLI commands
+
+## 🏗️ Building for Production
+
+To create a production build:
+
+```bash
+bun run build
+```
+
+The built files will be in the `dist/` directory, ready to be deployed to your hosting platform of choice.
+
+
+## 🚀 Tech Stack
+
+- **[Astro](https://astro.build)** - Modern web framework for content-focused websites
+- **[React](https://react.dev)** - UI components with islands architecture
+- **[Tailwind CSS](https://tailwindcss.com)** - Utility-first CSS framework
+- **[Shadcn](https://ui.shadcn.com/)** - Accessible component library
+- **[TypeScript](https://www.typescriptlang.org)** - Type-safe JavaScript
+- **[Bun](https://bun.sh)** - Fast JavaScript runtime and package manager
+
+## 🛠️ Project Structure
+
+```
+/
+├── public/             # Static assets (images, fonts, etc.)
+├── src/
+│   ├── components/     # React and Astro components
+│   ├── images/         # Image assets
+│   ├── layouts/        # Page layouts
+│   ├── lib/            # Utility functions and helpers
+│   ├── pages/          # File-based routing pages
+│   └── styles/         # Global styles and CSS
+├── astro.config.mjs    # Astro configuration
+├── tsconfig.json       # TypeScript configuration
+└── package.json        # Dependencies and scripts
+```
+
+
+## 📄 License
+
+This project is personal portfolio code. Feel free to reference for inspiration, but please don't copy it directly.
