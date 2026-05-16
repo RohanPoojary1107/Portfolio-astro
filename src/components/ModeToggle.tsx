@@ -1,5 +1,5 @@
 import * as React from "react"
-import { Moon, Sun } from "lucide-react"
+import { Check, Moon, Sun } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import {
@@ -10,21 +10,40 @@ import {
 } from "@/components/ui/dropdown-menu"
 
 export function ModeToggle() {
-  const [theme, setThemeState] = React.useState<
-    "theme-light" | "dark" | "system"
-  >("theme-light")
+  const [theme, setThemeState] = React.useState<"light" | "dark" | "system">("system")
 
   React.useEffect(() => {
-    const isDarkMode = document.documentElement.classList.contains("dark")
-    setThemeState(isDarkMode ? "dark" : "theme-light")
+    const savedTheme = localStorage.getItem("theme")
+    if (savedTheme === "light" || savedTheme === "dark" || savedTheme === "system") {
+      setThemeState(savedTheme)
+      return
+    }
+
+    // Backward compatibility with old saved value.
+    if (savedTheme === "theme-light") {
+      setThemeState("light")
+      return
+    }
+
+    setThemeState("system")
   }, [])
 
   React.useEffect(() => {
-    const isDark =
-      theme === "dark" ||
-      (theme === "system" &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches)
-    document.documentElement.classList[isDark ? "add" : "remove"]("dark")
+    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)")
+
+    const applyTheme = (value: "light" | "dark" | "system") => {
+      const isDark = value === "dark" || (value === "system" && mediaQuery.matches)
+      document.documentElement.classList[isDark ? "add" : "remove"]("dark")
+    }
+
+    applyTheme(theme)
+    localStorage.setItem("theme", theme)
+
+    if (theme !== "system") return
+
+    const handleSystemThemeChange = () => applyTheme("system")
+    mediaQuery.addEventListener("change", handleSystemThemeChange)
+    return () => mediaQuery.removeEventListener("change", handleSystemThemeChange)
   }, [theme])
 
   return (
@@ -37,14 +56,17 @@ export function ModeToggle() {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
-        <DropdownMenuItem onClick={() => setThemeState("theme-light")}>
+        <DropdownMenuItem onClick={() => setThemeState("light")} className="justify-between">
           Light
+          <Check className={`h-4 w-4 ${theme === "light" ? "opacity-100" : "opacity-0"}`} />
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setThemeState("dark")}>
+        <DropdownMenuItem onClick={() => setThemeState("dark")} className="justify-between">
           Dark
+          <Check className={`h-4 w-4 ${theme === "dark" ? "opacity-100" : "opacity-0"}`} />
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setThemeState("system")}>
+        <DropdownMenuItem onClick={() => setThemeState("system")} className="justify-between">
           System
+          <Check className={`h-4 w-4 ${theme === "system" ? "opacity-100" : "opacity-0"}`} />
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

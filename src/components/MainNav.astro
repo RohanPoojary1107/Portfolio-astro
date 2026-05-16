@@ -1,0 +1,38 @@
+---
+import { ModeToggle } from "./ModeToggle";
+import MobileNav from "./MobileNav";
+
+const navLinkClassName =
+  "rounded-md px-3 py-2 transition-colors hover:bg-zinc-100 hover:text-zinc-900 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-zinc-950 dark:hover:bg-zinc-800 dark:hover:text-zinc-50 dark:focus-visible:ring-zinc-300";
+---
+
+<header class="flex justify-between h-14">
+  <nav aria-label="Primary" class="flex items-center">
+    <a href="/" class="text-2xl xsm:text-3xl font-bold mr-5">{"<Яohan/>"}</a>
+    <ul class="gap-3 hidden sm:flex items-center">
+      <li><a href="/#about" class={navLinkClassName}>About</a></li>
+      <li><a href="/#experience" class={navLinkClassName}>Experience</a></li>
+      <li>
+        <a
+          href="/resume.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          class={navLinkClassName}
+        >
+          Resume
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <nav aria-label="Utilities" class="flex items-center">
+    <ul class="flex items-center">
+      <li>
+        <ModeToggle client:idle />
+      </li>
+      <li class="sm:hidden">
+        <MobileNav client:media="(max-width: 639px)" />
+      </li>
+    </ul>
+  </nav>
+</header>

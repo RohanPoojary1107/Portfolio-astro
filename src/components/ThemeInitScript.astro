@@ -1,0 +1,10 @@
+<script is:inline>
+  const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+  const storedTheme = localStorage.getItem('theme');
+  const normalizedTheme = storedTheme === 'theme-light' ? 'light' : storedTheme;
+  const themePreference = normalizedTheme === 'light' || normalizedTheme === 'dark' || normalizedTheme === 'system'
+    ? normalizedTheme
+    : 'system';
+  const isDark = themePreference === 'dark' || (themePreference === 'system' && mediaQuery.matches);
+  document.documentElement.classList[isDark ? 'add' : 'remove']('dark');
+</script>

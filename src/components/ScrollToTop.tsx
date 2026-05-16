@@ -4,7 +4,7 @@ import { ArrowUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export default function ScrollToTop() {
-    const [showButton, setshowButton] = useState(false);
+    const [showButton, setShowButton] = useState(false);
 
     const scrollToTop = () => {
         window.scrollTo({ top: 0, behavior: "smooth" });
@@ -12,7 +12,7 @@ export default function ScrollToTop() {
 
     useEffect(() => {
         const toggleVisibility = () => {
-            setshowButton(window.scrollY > 1000);
+            setShowButton(window.scrollY > 1000);
         };
         window.addEventListener("scroll", toggleVisibility);
 

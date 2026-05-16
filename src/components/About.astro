@@ -1,0 +1,35 @@
+---
+import { BookOpen } from "lucide-react";
+import SectionHeader from "@/components/SectionHeader.astro";
+---
+
+<section id="about" class="mb-16 scroll-mt-16">
+  <SectionHeader sectionName="about me" />
+  <div class="mb-4 space-y-4">
+    <p>
+      I'm a full stack engineer with over 4 years of experience building scalable, user-focused products. Currently at
+      <a class="underline" href="https://canny.io/" target="_blank" rel="noopener noreferrer">Canny</a>, I work on
+      tools that help product teams collect customer feedback, prioritize feature development, build roadmaps, and share
+      product updates through changelogs using <strong>AWS, Node.js, React, and TypeScript</strong>.
+    </p>
+    <p>
+      Previously, I spent several years at
+      <a class="underline" href="https://company.wattpad.com/" target="_blank" rel="noopener noreferrer">Wattpad</a>,
+      where I built and scaled backend systems for millions of users with <strong>Go, AWS, and Kubernetes</strong>. I
+      also led product features that improved engagement, contributed to reliability as part of the on-call team, and
+      mentored new engineers.
+    </p>
+    <p>
+      When I'm not coding, you'll find me following basketball or geeking out about aviation. I'm always open to
+      connecting, whether it's about technology, engineering culture, or just to chat!
+    </p>
+  </div>
+  <a
+    href="/resume.pdf"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-white transition-colors focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-zinc-950 focus-visible:ring-offset-2 border border-zinc-200 bg-white hover:bg-zinc-100 hover:text-zinc-900 h-10 px-4 py-2 dark:ring-offset-zinc-950 dark:focus-visible:ring-zinc-300 dark:border-zinc-800 dark:bg-zinc-950 dark:hover:bg-zinc-800 dark:hover:text-zinc-50"
+  >
+    <BookOpen className="mr-2 h-[1.2rem] w-[1.2rem]" /> Check out my resume!
+  </a>
+</section>

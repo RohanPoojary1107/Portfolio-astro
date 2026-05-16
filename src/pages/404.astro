@@ -1,31 +1,15 @@
 ---
 import '@/styles/globals.css';
 import Layout from '@/layouts/Layout.astro';
-import MainNav from '@/components/MainNav';
+import MainNav from '@/components/MainNav.astro';
+import ThemeInitScript from '@/components/ThemeInitScript.astro';
 ---
 
-<script is:inline>
-	const getThemePreference = () => {
-		if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
-			return localStorage.getItem('theme');
-		}
-		return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-	};
-	const isDark = getThemePreference() === 'dark';
-	document.documentElement.classList[isDark ? 'add' : 'remove']('dark');
- 
-	if (typeof localStorage !== 'undefined') {
-		const observer = new MutationObserver(() => {
-			const isDark = document.documentElement.classList.contains('dark');
-			localStorage.setItem('theme', isDark ? 'dark' : 'light');
-		});
-		observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
-	}
-</script>
+<ThemeInitScript />
 
 <Layout title="Rohan Poojary - 404" description="Oops! Page not Found :(" noindex={true}>
 	<main id="main-content" class="px-3 mx-auto max-w-(--breakpoint-lg) xl:max-w-[1140px]">
-		<MainNav client:load/>
+		<MainNav />
         <div class="pt-12 pb-12">
             <h1 class="font-bold">404: Page Not Found!</h1>
             <p>Sorry, but the page you were looking for could not be found.</p>

@@ -1,12 +1,13 @@
 ---
 import '@/styles/globals.css';
 import Layout from '@/layouts/Layout.astro';
-import MainNav from '@/components/MainNav';
-import About from '@/components/About';
-import Intro from '@/components/Intro';
-import Footer from '@/components/Footer';
+import MainNav from '@/components/MainNav.astro';
+import About from '@/components/About.astro';
+import Intro from '@/components/Intro.astro';
+import Footer from '@/components/Footer.astro';
 import Experience from '@/components/Experience.astro';
 import ScrollToTop from '@/components/ScrollToTop';
+import ThemeInitScript from '@/components/ThemeInitScript.astro';
 
 const personJsonLd = {
 	"@context": "https://schema.org",
@@ -31,36 +32,19 @@ const personJsonLd = {
 };
 ---
 
-<script is:inline>
-	const getThemePreference = () => {
-		if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
-			return localStorage.getItem('theme');
-		}
-		return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-	};
-	const isDark = getThemePreference() === 'dark';
-	document.documentElement.classList[isDark ? 'add' : 'remove']('dark');
- 
-	if (typeof localStorage !== 'undefined') {
-		const observer = new MutationObserver(() => {
-			const isDark = document.documentElement.classList.contains('dark');
-			localStorage.setItem('theme', isDark ? 'dark' : 'light');
-		});
-		observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
-	}
-</script>
+<ThemeInitScript />
 
 <Layout 
 	title="Rohan Poojary's Portfolio"
-	description="Hey, I'm Rohan! I'm passionate about making the web more accessible and I enjoy pushing myself outside my comfort zone."
+	description="Full stack engineer based in Toronto building scalable, user-focused products with React, Node.js, TypeScript, and AWS."
 >
 	<script is:inline type="application/ld+json" set:html={JSON.stringify(personJsonLd)} />
 	<main id="main-content" class="px-3 mx-auto max-w-(--breakpoint-lg) xl:max-w-[1140px]">
-		<MainNav client:load/>
-		<Intro client:load />
+		<MainNav />
+		<Intro />
 		<About />
 		<Experience />
 		<Footer />
-		<ScrollToTop client:load />
+		<ScrollToTop client:idle />
 	</main>
 </Layout>
