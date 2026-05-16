@@ -6,9 +6,14 @@ import "../styles/globals.css";
 interface Props {
 	title: string;
 	description: string;
+	noindex?: boolean;
+	canonicalPath?: string;
+	ogImage?: string;
 }
 
-const { title, description } = Astro.props;
+const { title, description, noindex = false, canonicalPath, ogImage = "/favicon.png" } = Astro.props;
+const canonicalUrl = new URL(canonicalPath ?? Astro.url.pathname, Astro.site ?? Astro.url).toString();
+const ogImageUrl = new URL(ogImage, Astro.site ?? Astro.url).toString();
 ---
 
 <!doctype html>
@@ -18,12 +23,25 @@ const { title, description } = Astro.props;
 		<meta name="description" content={description} />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" href="/favicon.png" />
+		<link rel="canonical" href={canonicalUrl} />
 		<meta name="generator" content={Astro.generator} />
-		<meta name="keywords" content="Rohan Poojary, Portfolio, Resume" />
+		<meta name="robots" content={noindex ? "noindex, nofollow" : "index, follow"} />
+		<meta name="author" content="Rohan Poojary" />
+		<meta name="keywords" content="Rohan Poojary, Portfolio, Backend Engineer, Go, AWS, Kubernetes" />
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:url" content={canonicalUrl} />
+		<meta property="og:image" content={ogImageUrl} />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={ogImageUrl} />
+		<meta name="theme-color" content="#18181b" />
 		<title>{title}</title>
 	</head>
 	<body class="bg-zinc-50 text-zinc-900 dark:bg-zinc-900 dark:text-zinc-50 min-h-screen">
-		<a href="#about" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-zinc-900 focus:text-white focus:rounded focus:dark:bg-zinc-50 focus:dark:text-zinc-900 focus:outline-none focus:ring-2 focus:ring-zinc-900 focus:ring-offset-2 focus:dark:ring-zinc-50">
+		<a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-zinc-900 focus:text-white focus:rounded focus:dark:bg-zinc-50 focus:dark:text-zinc-900 focus:outline-none focus:ring-2 focus:ring-zinc-900 focus:ring-offset-2 focus:dark:ring-zinc-50">
 			Skip to main content
 		</a>
 		<slot />
