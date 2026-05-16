@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import SectionHeader from "@/components/SectionHeader";
+import cannyImg from "@/images/canny.webp";
 import wattpadImg from "@/images/wattpad.webp";
 import rbcImg from "@/images/rbc.webp";
 import uoftImg from "@/images/uoft.webp";
@@ -9,85 +10,111 @@ import icubeImg from "@/images/icube.webp";
 type Experience = {
   company: string;
   link: string;
-  title: string;
-  duration: string;
   imgSrc: ImageMetadata;
-  desc: string[];
+  roles: {
+    title: string;
+    duration: string;
+    desc: string[];
+  }[];
 };
 
 const EXP_LIST: Experience[] = [
-  {
-    company: "Wattpad",
-    link: "https://www.wattpad.com",
-    title: "Intermediate Backend Engineer",
-    duration: "Jan 2024 - Present",
-    imgSrc: wattpadImg, 
-    desc: [
-      "Building scalable backend systems and APIs with Go, AWS, Kubernetes, and OpenAPI for millions of users, collaborating closely with client, product, and design teams.",
-      "Serving as a core member of the on-call engineering team, entrusted with maintaining high system reliability and rapid incident response for millions of users.",
-      "Led the development of <a class=\"underline\" href=\"https://www.wattpad.com/1575481129\" target=\"_blank\" rel=\"noopener noreferrer\">Polls</a>, a new interactive feature that increased user engagement by 15%.",
-      "<a class=\"underline\" href=\"https://www.wattpad.com/1534054762\" target=\"_blank\" rel=\"noopener noreferrer\">Redesigned Reading Lists</a> to improve discoverability and user experience, resulting in a 180% increase in users adding stories to reading lists.",
-      "Onboarding and mentoring new team members, fostering a collaborative and inclusive environment.",
-    ],
-  },
 {
-    company: "Wattpad",
-    link: "https://www.wattpad.com",
-    title: "Associate Backend Engineer",
-    duration: "Sept 2022 - Jan 2024",
-    imgSrc: wattpadImg, 
-    desc: [
-      "Designed and implemented an authorization platform using OPA, Go, and PHP to manage permissions across Wattpad's microservices, significantly enhancing security and scalability.",
-      "Led the engineering efforts for launching <a class=\"underline\" href=\"https://company.wattpad.com/blog/wattpad-originals\" target=\"_blank\" rel=\"noopener noreferrer\">Wattpad Originals</a>, collaborating with cross-functional teams to deliver a seamless and engaging user experience.",
-      "Identified and patched five production security vulnerabilities, improving overall system reliability and safeguarding user data.",
+    company: "Canny",
+    link: "https://canny.io",
+    imgSrc: cannyImg,
+    roles: [
+      {
+        title: "Full Stack Engineer",
+        duration: "Apr 2025 - Present",
+        desc: [
+          "Helping teams build better products with customer feedback",
+        ],
+      },
     ],
   },
   {
     company: "Wattpad",
     link: "https://www.wattpad.com",
-    title: "Associate Web Engineer",
-    duration: "May 2021 - Sept 2022",
-    imgSrc: wattpadImg,
-    desc: [
-      "Migrated the web application's Search experience from Backbone.js to React, leading to an 11% increase in user engagement within the first two weeks of launch.",
-      "Developed submission forms and contest banners for the 2022 Watty awards while reducing the number of API calls made by 67% and receiving over 30K submissions with zero major bugs on launch.",
-      "Built the foundation elements for Wattpad's design system in collaboration with internal teams and stakeholders using TypeScript, React, StorybookJS and Webpack.",
+    imgSrc: wattpadImg, 
+    roles: [
+      {
+        title: "Intermediate Backend Engineer",
+        duration: "Jan 2024 - Apr 2025",
+        desc: [
+          "Building scalable backend systems and APIs with Go, AWS, Kubernetes, and OpenAPI for millions of users, collaborating closely with client, product, and design teams.",
+          "Serving as a core member of the on-call engineering team, entrusted with maintaining high system reliability and rapid incident response for millions of users.",
+          "Led the development of <a class=\"underline\" href=\"https://www.wattpad.com/1575481129\" target=\"_blank\" rel=\"noopener noreferrer\">Polls</a>, a new interactive feature that increased user engagement by 15%.",
+          "<a class=\"underline\" href=\"https://www.wattpad.com/1534054762\" target=\"_blank\" rel=\"noopener noreferrer\">Redesigned Reading Lists</a> to improve discoverability and user experience, resulting in a 180% increase in users adding stories to reading lists.",
+          "Onboarding and mentoring new team members, fostering a collaborative and inclusive environment.",
+        ],
+      },
+      {
+        title: "Associate Backend Engineer",
+        duration: "Sept 2022 - Jan 2024",
+        desc: [
+          "Designed and implemented an authorization platform using OPA, Go, and PHP to manage permissions across Wattpad's microservices, significantly enhancing security and scalability.",
+          "Led the engineering efforts for launching <a class=\"underline\" href=\"https://company.wattpad.com/blog/wattpad-originals\" target=\"_blank\" rel=\"noopener noreferrer\">Wattpad Originals</a>, collaborating with cross-functional teams to deliver a seamless and engaging user experience.",
+          "Identified and patched five production security vulnerabilities, improving overall system reliability and safeguarding user data.",
+        ],
+      },
+      {
+        title: "Associate Web Engineer",
+        duration: "May 2021 - Sept 2022",
+        desc: [
+          "Migrated the web application's Search experience from Backbone.js to React, leading to an 11% increase in user engagement within the first two weeks of launch.",
+          "Developed submission forms and contest banners for the 2022 Watty awards while reducing the number of API calls made by 67% and receiving over 30K submissions with zero major bugs on launch.",
+          "Built the foundation elements for Wattpad's design system in collaboration with internal teams and stakeholders using TypeScript, React, StorybookJS and Webpack.",
+        ],
+      },
     ],
   },
   {
     company: "University of Toronto",
     link: "https://www.utm.utoronto.ca/math-cs-stats/home",
-    title: "Teaching Assistant",
-    duration: "Jan 2022 - Apr 2022",
     imgSrc: uoftImg,
-    desc: [
-      "Worked as an Undergraduate Teaching Assistant for the course CSC309: Programming on the web.",
-      "Conducted weekly tutorials to teach JavaScript, React, and Django fundamentals to a class of 10-15 students.",
-      "Provided timely feedback and guidance to 50+ students.",
+    roles: [
+      {
+        title: "Teaching Assistant",
+        duration: "Jan 2022 - Apr 2022",
+        desc: [
+          "Worked as an Undergraduate Teaching Assistant for the course CSC309: Programming on the web.",
+          "Conducted weekly tutorials to teach JavaScript, React, and Django fundamentals to a class of 10-15 students.",
+          "Provided timely feedback and guidance to 50+ students.",
+        ],
+      },
     ],
   },
   {
     company: "ICUBE UTM",
     link: "https://icubeutm.ca/",
-    title: "Web Developer",
-    duration: "Sept 2020 - Feb 2021",
     imgSrc: icubeImg,
-    desc: [
-      "Developed five responsive websites for clients using HTML, CSS, JavaScript, and MySQL.",
-      "Created a custom WordPress plugin using PHP to simplify and automate clients’ workflow, saving them over 30 manual hours of work per month.",
-      "Worked in an Agile environment and participated in sprint planning and code reviews.",
+    roles: [
+      {
+        title: "Web Developer",
+        duration: "Sept 2020 - Feb 2021",
+        desc: [
+          "Developed five responsive websites for clients using HTML, CSS, JavaScript, and MySQL.",
+          "Created a custom WordPress plugin using PHP to simplify and automate clients’ workflow, saving them over 30 manual hours of work per month.",
+          "Worked in an Agile environment and participated in sprint planning and code reviews.",
+        ],
+      },
     ],
   },
   {
     company: "Royal Bank of Canada",
     link: "https://www.rbcroyalbank.com/personal.html",
-    title: "Quality Engineer Intern",
-    duration: "May 2020 - Aug 2020",
     imgSrc: rbcImg,
-    desc: [
-      "Worked on the Client Cards team to automate UI Testing, authoring 350+ test cases, the highest by an intern",
-      "Developed automation scripts in Python with Selenium, increasing automated test coverage by 48%.",
-      "Created understandable, reliable, and maintainable test suites in collaboration with the QA team.",
+    roles: [
+      {
+        title: "Quality Engineer Intern",
+        duration: "May 2020 - Aug 2020",
+        desc: [
+          "Worked on the Client Cards team to automate UI Testing, authoring 350+ test cases, the highest by an intern",
+          "Developed automation scripts in Python with Selenium, increasing automated test coverage by 48%.",
+          "Created understandable, reliable, and maintainable test suites in collaboration with the QA team.",
+        ],
+      },
     ],
   },
 ];
@@ -96,26 +123,49 @@ const EXP_LIST: Experience[] = [
 <section id="experience" class="scroll-mt-16">
   <SectionHeader sectionName="experience" />
   {
-    EXP_LIST.map(({ company, link, title, duration, imgSrc, desc }) => (
-      <div class="flex flex-col md:flex-row md:items-center pb-11 md:pb-32">
-        <div class="md:flex-1 md:mr-11 md:pr-3">
+    EXP_LIST.map(({ company, link, imgSrc, roles }) => (
+      <article class="flex flex-col md:flex-row md:items-start pb-12 md:pb-24 gap-8">
+        <div class="md:flex-1 md:mr-8 md:pr-3">
           <div class="text-2xl font-bold pb-4 hover:underline">
             <a href={link}>{company}</a>
           </div>
-          <div class="pb-4">
-            {" "}
-            {title} | {duration}{" "}
-          </div>
-          <ul class="pl-8 list-disc max-w-prose">
-            {desc.map((bullet) => (
-              <li set:html={bullet}></li>
-            ))}
-          </ul>
+
+          {roles.length > 1 ? (
+            <ol class="relative pl-7 space-y-10">
+              {roles.map(({ title, duration, desc }, index) => (
+                <li class="relative">
+                  <span class="absolute -left-[1.875rem] top-1 h-3 w-3 rounded-full bg-zinc-300 dark:bg-zinc-600"></span>
+                  {index < roles.length - 1 && (
+                    <span class="absolute -left-[1.625rem] top-7 h-[calc(100%+0.5rem)] w-1 bg-zinc-200 dark:bg-zinc-800"></span>
+                  )}
+                  <div class="text-lg font-semibold leading-tight">{title}</div>
+                  <div class="text-sm text-zinc-500 dark:text-zinc-400 pb-3">{duration}</div>
+                  <ul class="pl-5 list-disc max-w-prose space-y-1.5">
+                    {desc.map((bullet) => (
+                      <li set:html={bullet}></li>
+                    ))}
+                  </ul>
+                </li>
+              ))}
+            </ol>
+          ) : (
+            roles.map(({ title, duration, desc }) => (
+              <div>
+                <div class="text-lg font-semibold leading-tight">{title}</div>
+                <div class="text-sm text-zinc-500 dark:text-zinc-400 pb-3">{duration}</div>
+                <ul class="pl-5 list-disc max-w-prose space-y-1.5">
+                  {desc.map((bullet) => (
+                    <li set:html={bullet}></li>
+                  ))}
+                </ul>
+              </div>
+            ))
+          )}
         </div>
-        <div class="order-first md:order-last justify-center md:justify-end max-w-lg pb-11 md:pb-0 md:pl-3 md:flex-1">
+        <div class="order-first md:order-last md:sticky md:top-20 justify-center md:justify-end max-w-lg md:pl-3 md:flex-1">
           <Image class="rounded-2xl" alt={`${company} logo`} src={imgSrc} />
         </div>
-      </div>
+      </article>
     ))
   }
 </section>

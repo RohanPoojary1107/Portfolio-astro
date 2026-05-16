@@ -3,7 +3,7 @@ import '@/styles/globals.css';
 import Layout from '@/layouts/Layout.astro';
 import MainNav from '@/components/MainNav';
 import About from '@/components/About';
-import Intro from '@/components/Intro';
+import Intro from '@/components/Intro.astro';
 import Footer from '@/components/Footer';
 import Experience from '@/components/Experience.astro';
 import ScrollToTop from '@/components/ScrollToTop';
@@ -13,7 +13,12 @@ const personJsonLd = {
 	"@type": "Person",
 	name: "Rohan Poojary",
 	url: "https://rohanpoojary.com",
-	jobTitle: "Backend Engineer",
+	jobTitle: "Full Stack Engineer",
+	worksFor: {
+		"@type": "Organization",
+		name: "Canny",
+		url: "https://canny.io"
+	},
 	address: {
 		"@type": "PostalAddress",
 		addressLocality: "Toronto",
@@ -49,7 +54,7 @@ const personJsonLd = {
 	title="Rohan Poojary's Portfolio"
 	description="Hey, I'm Rohan! I'm passionate about making the web more accessible and I enjoy pushing myself outside my comfort zone."
 >
-	<script type="application/ld+json" set:html={JSON.stringify(personJsonLd)} />
+	<script is:inline type="application/ld+json" set:html={JSON.stringify(personJsonLd)} />
 	<main id="main-content" class="px-3 mx-auto max-w-(--breakpoint-lg) xl:max-w-[1140px]">
 		<MainNav client:load/>
 		<Intro />

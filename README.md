@@ -6,6 +6,7 @@ My personal portfolio website built with Astro, React, and Tailwind CSS.
 
 ### Prerequisites
 
+- [Node.js 24](https://nodejs.org/) installed on your machine
 - [Bun](https://bun.sh) installed on your machine
 
 ### Installation
