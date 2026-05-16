@@ -3,7 +3,7 @@ import '@/styles/globals.css';
 import Layout from '@/layouts/Layout.astro';
 import MainNav from '@/components/MainNav';
 import About from '@/components/About';
-import Intro from '@/components/Intro.astro';
+import Intro from '@/components/Intro';
 import Footer from '@/components/Footer';
 import Experience from '@/components/Experience.astro';
 import ScrollToTop from '@/components/ScrollToTop';
@@ -57,7 +57,7 @@ const personJsonLd = {
 	<script is:inline type="application/ld+json" set:html={JSON.stringify(personJsonLd)} />
 	<main id="main-content" class="px-3 mx-auto max-w-(--breakpoint-lg) xl:max-w-[1140px]">
 		<MainNav client:load/>
-		<Intro />
+		<Intro client:load />
 		<About />
 		<Experience />
 		<Footer />
